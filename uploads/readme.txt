@@ -1,0 +1,1 @@
+Esse diretório é exclusivo para upload das imagens.
