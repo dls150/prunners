@@ -40,12 +40,12 @@
           //definição de regras para o formulário
 
           // echo $rule_nome;
-          $this->form_validation->set_rules('nome', 'Nome', 'required');
-          $this->form_validation->set_rules('idequipe', 'idequipe', 'required');
-          $this->form_validation->set_rules('idcategoria', 'idcategoria', 'required');
-          $this->form_validation->set_rules('corrida', 'corrida', 'required');
-          $this->form_validation->set_rules('data', 'data', 'required');
-          $this->form_validation->set_rules('kilometragem', 'kilometragem', 'required');
+          $this->form_validation->set_rules('idatleta', 'nome', 'required');
+          // $this->form_validation->set_rules('idequipe', 'idequipe', 'required');
+          // $this->form_validation->set_rules('idcategoria', 'idcategoria', 'required');
+          $this->form_validation->set_rules('idcorrida', 'nomecorrida', 'required');
+          // $this->form_validation->set_rules('data', 'data', 'required');
+          // $this->form_validation->set_rules('kilometragem', 'kilometragem', 'required');
 
           //acao dinamica que sera enviada para a view
           $dados['acao'] = "evento/cadastrar/";
@@ -56,10 +56,10 @@
               $dados['registro'] = $this->evento_model->get($id);
           }
           //buscando a lista de estados
-          $dados['listaEquipes'] = $this->evento_model->get();
-          $dados['listaCategorias'] = $this->evento_model->get();
-          $dados['listaEquipes'] = $this->evento_model->get();
-          $dados['listaAtletas'] = $this->evento_model->get();
+          $dados['listaEquipes'] = $this->equipe_model->get();
+          $dados['listaCategorias'] = $this->categoria_model->get();
+          $dados['listaCorridas'] = $this->corrida_model->get();
+          $dados['listaAtletas'] = $this->atleta_model->get();
 
           //veririca se o form foi submetido e não houve erros de validação
           if($this->form_validation->run()===false){

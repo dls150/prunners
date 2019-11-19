@@ -12,7 +12,7 @@ class PDF extends MY_FPDF{
       $this->SetFont('','B');
 
       // Header
-      $w = array(10, 40, 35, 40, 60);
+      $w = array(10, 40, 35, 40, 60, 20);
       for($i=0;$i<count($header);$i++)
           $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
       $this->Ln();

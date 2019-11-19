@@ -33,7 +33,7 @@
           $this->load->model('equipe_model');
 
           //variaveis enviadas para a View
-          $dados['titulo'] = "Cadastro de atleta";
+          $dados['titulo'] = "Cadastro de Atleta";
 
           //definição de regras para o formulário
 
@@ -54,8 +54,8 @@
               $dados['registro'] = $this->atleta_model->get($id);
           }
           //buscando a lista de estados
-          $dados['listaEquipes'] = $this->atleta_model->get();
-          $dados['listaCategorias'] = $this->atleta_model->get();
+          $dados['listaEquipes'] = $this->equipe_model->get();
+          $dados['listaCategorias'] = $this->categoria_model->get();
 
           //veririca se o form foi submetido e não houve erros de validação
           if($this->form_validation->run()===false){
